@@ -9,6 +9,7 @@ namespace AppEscritorioForms
       InitializeComponent();
     }
 
+    #region EVENTS
     private void Form1_Load(object sender, System.EventArgs e)
     {
 
@@ -21,7 +22,7 @@ namespace AppEscritorioForms
 
     private void btnAdd_Click(object sender, System.EventArgs e)
     {
-
+      OpenContactDetailsDialog();
     }
 
     private void btnSearch_Click(object sender, System.EventArgs e)
@@ -33,6 +34,15 @@ namespace AppEscritorioForms
     {
 
     }
+    #endregion
+
+    #region PRIVATE METHODS
+    private void OpenContactDetailsDialog()
+    {
+      ContactDetails contactDetails = new ContactDetails();
+      contactDetails.ShowDialog();
+    }
+    #endregion
 
   }
 }
