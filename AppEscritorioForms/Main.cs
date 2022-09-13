@@ -1,4 +1,5 @@
-﻿using System.Windows.Forms;
+﻿using System.Threading.Tasks;
+using System.Windows.Forms;
 
 namespace AppEscritorioForms
 {
@@ -12,7 +13,6 @@ namespace AppEscritorioForms
     #region EVENTS
     private void Form1_Load(object sender, System.EventArgs e)
     {
-
     }
 
     private void gridContacts_CellContentClick(object sender, DataGridViewCellEventArgs e)
@@ -35,6 +35,11 @@ namespace AppEscritorioForms
     {
 
     }
+    private void btnBrowser_Click(object sender, System.EventArgs e)
+    {
+      OpenBrowser();
+    }
+
     #endregion
 
     #region PRIVATE METHODS
@@ -43,6 +48,12 @@ namespace AppEscritorioForms
       ContactDetails contactDetails = new ContactDetails();
       contactDetails.ShowDialog();
     }
+    private void OpenBrowser()
+    {
+      Browser browser = new Browser();
+      browser.ShowDialog();
+    }
+
     #endregion
 
   }

@@ -33,15 +33,16 @@
       this.btnAdd = new System.Windows.Forms.Button();
       this.txtSearch = new System.Windows.Forms.TextBox();
       this.label1 = new System.Windows.Forms.Label();
+      this.btnBrowser = new System.Windows.Forms.Button();
       ((System.ComponentModel.ISupportInitialize)(this.gridContacts)).BeginInit();
       this.SuspendLayout();
       // 
       // gridContacts
       // 
       this.gridContacts.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-      this.gridContacts.Location = new System.Drawing.Point(26, 100);
+      this.gridContacts.Location = new System.Drawing.Point(12, 96);
       this.gridContacts.Name = "gridContacts";
-      this.gridContacts.Size = new System.Drawing.Size(567, 327);
+      this.gridContacts.Size = new System.Drawing.Size(581, 289);
       this.gridContacts.TabIndex = 0;
       this.gridContacts.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.gridContacts_CellContentClick);
       // 
@@ -86,11 +87,23 @@
       this.label1.TabIndex = 7;
       this.label1.Text = "Search";
       // 
+      // btnBrowser
+      // 
+      this.btnBrowser.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+      this.btnBrowser.Location = new System.Drawing.Point(261, 403);
+      this.btnBrowser.Name = "btnBrowser";
+      this.btnBrowser.Size = new System.Drawing.Size(75, 35);
+      this.btnBrowser.TabIndex = 9;
+      this.btnBrowser.Text = "Browser";
+      this.btnBrowser.UseVisualStyleBackColor = true;
+      this.btnBrowser.Click += new System.EventHandler(this.btnBrowser_Click);
+      // 
       // Main
       // 
       this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
       this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
       this.ClientSize = new System.Drawing.Size(613, 450);
+      this.Controls.Add(this.btnBrowser);
       this.Controls.Add(this.label1);
       this.Controls.Add(this.txtSearch);
       this.Controls.Add(this.btnAdd);
@@ -112,6 +125,7 @@
     private System.Windows.Forms.Button btnAdd;
     private System.Windows.Forms.TextBox txtSearch;
     private System.Windows.Forms.Label label1;
-  }
+        private System.Windows.Forms.Button btnBrowser;
+    }
 }
 
