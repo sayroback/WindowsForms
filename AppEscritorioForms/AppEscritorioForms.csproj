@@ -33,6 +33,7 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="MySql.Data, Version=8.0.30.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d, processorArchitecture=MSIL" />
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
@@ -46,12 +47,15 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="BusinessLogicLayer.cs" />
+    <Compile Include="Contact.cs" />
     <Compile Include="ContactDetails.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="ContactDetails.Designer.cs">
       <DependentUpon>ContactDetails.cs</DependentUpon>
     </Compile>
+    <Compile Include="DataAccessLayer.cs" />
     <Compile Include="Main.cs">
       <SubType>Form</SubType>
     </Compile>

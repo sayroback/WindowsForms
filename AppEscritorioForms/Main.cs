@@ -27,7 +27,8 @@ namespace AppEscritorioForms
 
     private void btnSearch_Click(object sender, System.EventArgs e)
     {
-
+      DataAccessLayer dataAccessLayer = new DataAccessLayer();
+      dataAccessLayer.setconnection();
     }
 
     private void txtSearch_TextChanged(object sender, System.EventArgs e)
