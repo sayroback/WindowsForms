@@ -40,6 +40,16 @@ namespace AppEscritorioForms
         });
         contactDetails.ShowDialog(this);
       }
+      else if (cell.Value.ToString() == "Delete")
+      {
+        DeleteContact(int.Parse(gridContacts.Rows[e.RowIndex].Cells[0].Value.ToString()));
+        PopulateContacts();
+      }
+    }
+
+    private void DeleteContact(int id)
+    {
+      _businessLogicLayer.DeleteContact(id);
     }
 
     private void btnAdd_Click(object sender, System.EventArgs e)

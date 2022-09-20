@@ -121,6 +121,29 @@ namespace AppEscritorioForms
       return contacts;
     } 
 
+    public void DeleteContact(int id)
+    {
+      try
+      {
+        _connection.Open();
+        string query = @"
+          DELETE FROM Contacts WHERE id = @Id;
+        ";
+        SqlCommand command = new SqlCommand(query, _connection);
+        command.Parameters.Add(new SqlParameter("@Id", id));
+        command.ExecuteNonQuery();
+      }
+      catch (Exception)
+      {
+
+        throw;
+      }
+      finally
+      {
+        _connection.Close();
+      }
+    }
+
     //MySqlConnection conex = new MySqlConnection();
     //static string servidor = "localhost";
     //static string bd = "winformscontact";
