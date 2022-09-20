@@ -18,9 +18,9 @@ namespace AppEscritorioForms
       PopulateContacts();
     }
 
-    public void PopulateContacts()
+    public void PopulateContacts(string searchText = null)
     {
-      List<Contact> contacts = _businessLogicLayer.GetContacts();
+      List<Contact> contacts = _businessLogicLayer.GetContacts(searchText);
       gridContacts.DataSource = contacts;
     }
 
@@ -59,6 +59,8 @@ namespace AppEscritorioForms
 
     private void btnSearch_Click(object sender, System.EventArgs e)
     {
+      PopulateContacts(txtSearch.Text);
+      txtSearch.Text = string.Empty;
       //DataAccessLayer dataAccessLayer = new DataAccessLayer();
       //dataAccessLayer.setconnection();
     }

@@ -87,14 +87,25 @@ namespace AppEscritorioForms
       }
     }
 
-    public List<Contact> GetContacts()
+    public List<Contact> GetContacts(string searchText = null)
     {
       List<Contact> contacts = new List<Contact>();
       try
       {
         _connection.Open();
         string query = @" SELECT * FROM Contacts";
-        SqlCommand command = new SqlCommand(query, _connection);
+        SqlCommand command = new SqlCommand();
+
+        if (!string.IsNullOrEmpty(searchText))
+        {
+          query += @" WHERE FirstName LIKE @Search OR LastName LIKE @Search OR 
+            Phone LIKE @Search OR Address LIKE @Search
+          ";
+          command.Parameters.Add(new SqlParameter("@Search", $"%{searchText}%"));
+        }
+        command.CommandText = query;
+        command.Connection = _connection;
+
         SqlDataReader reader = command.ExecuteReader();
         while (reader.Read())
         {

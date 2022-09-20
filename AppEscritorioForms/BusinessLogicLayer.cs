@@ -18,9 +18,9 @@ namespace AppEscritorioForms
       return contact;
     }
 
-    public List<Contact> GetContacts()
+    public List<Contact> GetContacts(string searchText = null)
     {
-      return _dataAccessLayer.GetContacts();
+      return _dataAccessLayer.GetContacts(searchText);
     }
     
     public void DeleteContact(int id)
