@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.Collections.Generic;
 
 namespace AppEscritorioForms
 {
@@ -13,12 +9,18 @@ namespace AppEscritorioForms
     {
       _dataAccessLayer = new DataAccessLayer();
     }
-    public Contact SaveContact(Contact contact) {
+    public Contact SaveContact(Contact contact)
+    {
       if (contact.Id == 0)
-        return null;
+        _dataAccessLayer.InsertContact(contact);
       else
-        //_dataAccessLayer.UpdateContact
-        return null;
+        _dataAccessLayer.UpdateContact(contact);
+      return contact;
+    }
+
+    public List<Contact> GetContacts()
+    {
+      return _dataAccessLayer.GetContacts();
     }
   }
 }
